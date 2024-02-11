@@ -3,6 +3,8 @@ using DesignPattern.Abstract_Factory;
 using DesignPattern.Adapter;
 using DesignPattern.Adaptor;
 using DesignPattern.Factory;
+using DesignPattern.FlyWeight;
+using DesignPattern.FlyWeight.After;
 
 Console.WriteLine("Hello, World!");
 
@@ -63,4 +65,26 @@ ICream cream = new Vanilla(new Cocolate(new Vanilla(new Corn())));
 
 Console.WriteLine(cream.GetCost());
 Console.WriteLine(cream.GetIngredient());
+#endregion
+
+#region FlyWeight
+
+BulletRegistry bulletRegistry = BulletRegistry.GetInstance();
+
+Bullet NineMMbullet = new Bullet();
+bulletRegistry.Add(ButtelType.NINE_MM, NineMMbullet);
+
+Bullet fiveMMBullet = new Bullet();
+bulletRegistry.Add(ButtelType.FiVE_MM, fiveMMBullet);
+
+List<FlyingBullet> list = new List<FlyingBullet>(); 
+
+for(int i=0;i<2000;i++)
+{
+    FlyingBullet bullet = new FlyingBullet();
+    bullet.Bullet = bulletRegistry.GetBullet(ButtelType.FiVE_MM);
+    list.Add(bullet);
+}
+
+
 #endregion
