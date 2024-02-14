@@ -5,6 +5,7 @@ using DesignPattern.Adaptor;
 using DesignPattern.Factory;
 using DesignPattern.FlyWeight;
 using DesignPattern.FlyWeight.After;
+using DesignPattern.Strategy;
 
 Console.WriteLine("Hello, World!");
 
@@ -86,5 +87,13 @@ for(int i=0;i<2000;i++)
     list.Add(bullet);
 }
 
+
+#endregion
+
+
+#region Strategy
+    
+GoogleMaps googleMaps = new GoogleMaps();
+googleMaps.FindPath("kolkata", "Dhanbad", TransportMode.CAR);
 
 #endregion
