@@ -5,6 +5,7 @@ using DesignPattern.Adaptor;
 using DesignPattern.Factory;
 using DesignPattern.FlyWeight;
 using DesignPattern.FlyWeight.After;
+using DesignPattern.Observer;
 using DesignPattern.Strategy;
 
 Console.WriteLine("Hello, World!");
@@ -70,30 +71,48 @@ Console.WriteLine(cream.GetIngredient());
 
 #region FlyWeight
 
-BulletRegistry bulletRegistry = BulletRegistry.GetInstance();
+//BulletRegistry bulletRegistry = BulletRegistry.GetInstance();
 
-Bullet NineMMbullet = new Bullet();
-bulletRegistry.Add(ButtelType.NINE_MM, NineMMbullet);
+//Bullet NineMMbullet = new Bullet();
+//bulletRegistry.Add(ButtelType.NINE_MM, NineMMbullet);
 
-Bullet fiveMMBullet = new Bullet();
-bulletRegistry.Add(ButtelType.FiVE_MM, fiveMMBullet);
+//Bullet fiveMMBullet = new Bullet();
+//bulletRegistry.Add(ButtelType.FiVE_MM, fiveMMBullet);
 
-List<FlyingBullet> list = new List<FlyingBullet>(); 
+//List<FlyingBullet> list = new List<FlyingBullet>(); 
 
-for(int i=0;i<2000;i++)
-{
-    FlyingBullet bullet = new FlyingBullet();
-    bullet.Bullet = bulletRegistry.GetBullet(ButtelType.FiVE_MM);
-    list.Add(bullet);
-}
+//for(int i=0;i<2000;i++)
+//{
+//    FlyingBullet bullet = new FlyingBullet();
+//    bullet.Bullet = bulletRegistry.GetBullet(ButtelType.FiVE_MM);
+//    list.Add(bullet);
+//}
 
 
 #endregion
 
 
 #region Strategy
-    
-GoogleMaps googleMaps = new GoogleMaps();
-googleMaps.FindPath("kolkata", "Dhanbad", TransportMode.CAR);
+
+//GoogleMaps googleMaps = new GoogleMaps();
+//googleMaps.FindPath("kolkata", "Dhanbad", TransportMode.CAR);
+
+#endregion
+
+#region Observer 
+
+//EmailNotificationClient emailNotificationClient = new EmailNotificationClient(new EmailNoticationService());
+//SMSNotifactionClient smsNotifaction = new SMSNotifactionClient();
+
+//NotificationSender sender = new NotificationSender();
+//sender.AddClient(emailNotificationClient);
+//sender.AddClient(smsNotifaction);
+//sender.Notify("Sending Message");
+
+//sender.RemoveClient(emailNotificationClient);
+//sender.Notify("Sending SMS");
+
+//Console.ReadKey();
+
 
 #endregion
