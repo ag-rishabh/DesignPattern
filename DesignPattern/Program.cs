@@ -1,5 +1,6 @@
 ﻿using DesignPattern;
 using DesignPattern.Abstract_Factory;
+using DesignPattern.AbstractFactoryCoffeeExample;
 using DesignPattern.Adapter;
 using DesignPattern.Adaptor;
 using DesignPattern.Factory;
@@ -44,9 +45,11 @@ int annualCharge = creditCard.GetAnnualCharge();
 
 #region Abstract Factory
 
-IThemeFactory theme = AbstractThemeFactory.GetThemeFactory("LIGHT");
-Console.WriteLine(theme.GetButton().CreateButton());
-Console.WriteLine(theme.GetCheckBox().CreateCheckBox());
+//IThemeFactory theme = AbstractThemeFactory.GetThemeFactory("LIGHT");
+//Console.WriteLine(theme.GetButton().CreateButton());
+//Console.WriteLine(theme.GetCheckBox().CreateCheckBox());
+
+//CoffeeServer.ServerCoffe(CoffeeType.Cafelatte);
 
 #endregion
 
